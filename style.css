@@ -234,7 +234,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    min-height: calc(var(--vh, 1vh) * 100 - 100px);
+    min-height: calc(100vh - 100px);
     padding: 80px 100px;
     background: linear-gradient(135deg, #FFE5EC 0%, #FFC9D9 100%);
 }
