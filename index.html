@@ -7,16 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sell" />
-    <style>
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -54,9 +44,9 @@
         <div class="mobile-menu-content">
             <a href="#home" class="mobile-menu-item"><img src="images/mdi_home.svg" alt="Home" class="nav-icon" /> Home</a>
             <a href="#about" class="mobile-menu-item"><img src="images/mdi_about.svg" alt="About" class="nav-icon" /> About Us</a>
-            <a href="#services" class="mobile-menu-item">Our Services</a>
-            <a href="#pricing" class="mobile-menu-item"><span class="material-symbols-outlined nav-icon pricing-icon">sell</span> Pricing</a>
-            <a href="#faq" class="mobile-menu-item">FAQ</a>
+            <a href="#services" class="mobile-menu-item"><img src="images/mdi_services.svg" alt="Services" class="nav-icon" /> Our Services</a>
+            <a href="#pricing" class="mobile-menu-item"><img src="images/mdi_pricing_tag.svg" alt="Pricing" class="nav-icon pricing-svg" /> Pricing</a>
+            <a href="#faq" class="mobile-menu-item"><img src="images/mdi_faq.svg" alt="FAQ" class="nav-icon" /> FAQ</a>
         </div>
 
         <a href="#quote" class="mobile-contact-btn">CONTACT US</a>
@@ -175,15 +165,6 @@
     </section>
 
     <script>
-        // Fix mobile 100vh issues by setting --vh based on innerHeight
-        function setVhUnit() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        setVhUnit();
-        window.addEventListener('resize', setVhUnit);
-        window.addEventListener('orientationchange', setVhUnit);
-
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const closeMenu = document.getElementById('closeMenu');
