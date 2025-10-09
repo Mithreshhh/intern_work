@@ -48,6 +48,45 @@ body {
     transition: color 0.3s;
 }
 
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    display: inline-block;
+}
+
+/* Force black color for material symbols and add white dot */
+.pricing-icon.material-symbols-outlined {
+    color: #000;
+    font-size: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    position: relative;
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24; /* filled black tag */
+}
+
+.pricing-icon.material-symbols-outlined::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #FFF;
+    border-radius: 50%;
+    /* place the dot roughly where the hole is on the tag */
+    left: 11px;
+    top: 9px;
+}
+
+/* Ensure SVG icons appear black in mobile menu */
+@media (max-width: 768px) {
+    .mobile-menu .nav-icon {
+        filter: brightness(0) saturate(100%);
+    }
+}
+
+/* Removed services/faq icon overrides per user request */
+
 .nav-menu li a:hover {
     color: #FA1239;
 }
@@ -98,7 +137,7 @@ body {
     top: 0;
     right: -100%;
     width: 290px;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background: linear-gradient(180deg, #FFE5EC 0%, #FFC9D9 100%);
     z-index: 1000;
     padding: 30px 24px;
@@ -195,7 +234,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    min-height: calc(100vh - 100px);
+    min-height: calc(var(--vh, 1vh) * 100 - 100px);
     padding: 80px 100px;
     background: linear-gradient(135deg, #FFE5EC 0%, #FFC9D9 100%);
 }
@@ -660,7 +699,7 @@ body {
         flex-direction: column;
         padding: 30px 20px 40px;
         gap: 30px;
-        min-height: auto;
+        min-height: calc(var(--vh, 1vh) * 100 - 70px);
     }
     
     .hero-content {
@@ -727,26 +766,26 @@ body {
     }
     
     .circle-background {
-        width: 100%;
-        max-width: 450px;
-        height: 450px;
+        width: 95%;
+        max-width: 420px;
+        height: 420px;
         position: absolute;
         right: auto;
         top: 50%;
         transform: translateY(-50%);
         left: 50%;
-        margin-left: -225px;
+        margin-left: -210px;
     }
     
     .circle-background-small {
-        width: 100%;
-        max-width: 350px;
-        height: 350px;
+        width: 85%;
+        max-width: 320px;
+        height: 320px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 50%;
-        margin-left: -175px;
+        margin-left: -160px;
     }
     
     .hero-image {
@@ -755,41 +794,47 @@ body {
         height: auto;
         position: relative;
         z-index: 1;
-        margin-top: 20px;
+        margin-top: 0;
     }
     
     .rating-card {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        margin: 20px auto 10px;
-        transform: scale(0.85);
+        position: absolute;
+        left: 16px;
+        bottom: 120px;
+        margin: 0;
+        padding: 12px 12px;
+        gap: 12px;
+        width: auto;
+        max-width: 260px;
+        transform: none;
     }
     
     .rating-number {
-        font-size: 42px;
+        font-size: 28px;
     }
     
     .rating-label {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .stats-card {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        margin: 10px auto 20px;
-        transform: scale(0.85);
+        position: absolute;
+        right: 16px;
+        bottom: 20px;
+        margin: 0;
+        padding: 16px 16px;
+        gap: 14px;
+        transform: none;
         width: auto;
-        max-width: 90%;
+        max-width: 260px;
     }
     
     .stats-number {
-        font-size: 26px;
+        font-size: 22px;
     }
     
     .stats-label {
-        font-size: 15px;
+        font-size: 12px;
     }
     
     .what-you-get {
